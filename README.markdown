@@ -877,6 +877,26 @@ The following values will fail, causing compilation to abort:
 
 - *Type*: statement
 
+validate_ip_address
+-------------------
+Validate that all passed values are valid IPv4 or IPv6 addresses.
+Abort catalog compilation if any value fails this check.
+
+The following values will pass:
+
+    $my_address = '192.168.52.1'
+    validate_address($my_address)
+
+The following values will fail, causing compilation to abort:
+
+    validate_ip_address('192.168.3.7.8')
+    validate_ip_address('192.168.1')
+    validate_ip_address('some string')
+
+
+
+- *Type*: statement
+
 validate_re
 -----------
 Perform simple validation of a string against one or more regular
